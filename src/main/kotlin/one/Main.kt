@@ -1,12 +1,13 @@
+package one
+
 import java.io.File
 
-const val INPUT_PATH = "src/main/resources/1.txt"
+const val INPUT_PATH = "src/main/resources/one.txt"
 
 fun main() {
     one()
     two()
 }
-
 
 fun one() {
     var currentCalories = 0;
