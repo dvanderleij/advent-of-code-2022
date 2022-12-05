@@ -1,8 +1,8 @@
 package one
 
-import java.io.File
+import kotlin.io.path.forEachLine
 
-const val INPUT_PATH = "src/main/resources/one.txt"
+const val INPUT_FILE = "one.txt"
 
 fun main() {
     one()
@@ -12,7 +12,7 @@ fun main() {
 fun one() {
     var currentCalories = 0;
     var maxCalories = Int.MIN_VALUE
-    File(INPUT_PATH).forEachLine {
+    common.inputPath(INPUT_FILE).forEachLine {
         if (it == "") {
             if (currentCalories > maxCalories) {
                 maxCalories = currentCalories
@@ -30,7 +30,7 @@ fun one() {
 fun two() {
     val largestCalorieCounts = IntArray(3) { Int.MIN_VALUE }
     var currentCalories = 0;
-    File(INPUT_PATH).forEachLine {
+    common.inputPath(INPUT_FILE).forEachLine {
         if (it.isEmpty()) {
             val smallestLargest = largestCalorieCounts.min()
             if (currentCalories > smallestLargest) {

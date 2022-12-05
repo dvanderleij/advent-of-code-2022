@@ -1,8 +1,8 @@
 package two
 
-import java.io.File
+import kotlin.io.path.forEachLine
 
-const val INPUT_PATH = "src/main/resources/two.txt"
+const val INPUT_FILE = "two.txt"
 
 
 fun main() {
@@ -28,7 +28,7 @@ const val PAPER_SCORE = 2
 const val SCISSORS_SCORE = 3
 fun one() {
     var score = 0
-    File(INPUT_PATH).forEachLine {
+    common.inputPath(INPUT_FILE).forEachLine {
         val x = it.split(' ')
         val opponentMove = x[0]
         val playerMove = x[1]
@@ -70,7 +70,7 @@ const val HAVE_TO_WIN = "Z"
 
 fun two() {
     var score = 0
-    File(INPUT_PATH).forEachLine {
+    common.inputPath(INPUT_FILE).forEachLine {
         val x = it.split(' ')
         val opponentMove = x[0]
         val goalIs = x[1]
